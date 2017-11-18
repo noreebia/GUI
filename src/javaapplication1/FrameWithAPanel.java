@@ -17,6 +17,7 @@ public class FrameWithAPanel extends javax.swing.JFrame {
     public FrameWithAPanel() {
         initComponents();
         this.setVisible(true);
+    	jPanel1.setAvatarColor(0,0,0);
     }
 
     /**
@@ -72,6 +73,6 @@ public class FrameWithAPanel extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify                     
-    private javax.swing.JPanel jPanel1;
+    private PanelWithDrawing jPanel1;
     // End of variables declaration                   
 }

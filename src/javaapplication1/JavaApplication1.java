@@ -30,6 +30,7 @@ public class JavaApplication1 {
 		
 		//FrameWithAPanel frame = new FrameWithAPanel();
 		
+		//FrameWithAPanel f1 = new FrameWithAPanel();
 		
 		/*
         JFrame f = new JFrame("ShapesDemo2D");

@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 public class PanelWithDrawing extends JPanel{
 
 	BasicStroke stroke = new BasicStroke(2.0f);
+	Color color = new Color(0,255,255);
 	
 	public PanelWithDrawing() {
 		System.out.println("panel with drawing created");
@@ -35,24 +36,37 @@ public class PanelWithDrawing extends JPanel{
 			smallerValue = panelWidth;
 		}
 		
-		g2.setColor(new Color(0,255,255));
+		g2.setColor(color);
 		int percentage = 45;
 		int circleRadius = smallerValue * percentage/100;
 		
 		Shape circle = new Ellipse2D.Double(panelWidth/2 - circleRadius/2, panelHeight/2 - circleRadius/2, circleRadius, circleRadius);
-		g2.fill(circle);
+		//g2.fill(circle);
 		/*
 		g2.fillOval(panelWidth/2 - circleRadius/2, panelHeight/2 - circleRadius/2, circleRadius, circleRadius);
 		*/
 		int rectWidth = circleRadius;
 		int rectHeight = circleRadius / 5;
 
-		g2.fillRect(panelWidth/2, panelHeight/2 - rectHeight/2, rectWidth, rectHeight);
+		//g2.fillRect(panelWidth/2, panelHeight/2 - rectHeight/2, rectWidth, rectHeight);
 		System.out.println("panelWidth: " + panelWidth + "panelHeight: " + panelHeight + "rectWidth: " + rectWidth + "rectHeight: " + rectHeight );
 		
+		
+		//int xPoints[] = {panelWidth/2 - 30, panelWidth/2, panelWidth/2+30, panelWidth/2};
+		//int yPoints[] = {panelHeight/2, panelHeight/2-30, panelHeight/2, panelHeight/2+70};
+		
+		int xPoints[] = {panelWidth/2 - 30, panelWidth/2, panelWidth/2 + 90, panelWidth/2};
+		int yPoints[] = {panelHeight/2, panelHeight/2-30, panelHeight/2, panelHeight/2+30};
+
+		g2.fillPolygon(xPoints, yPoints, xPoints.length);
 		/*
 		Shape rect = new Rectangle2D.Double(panelWidth/2 - rectWidth/2, panelHeight/2, rectWidth, rectHeight);
 		g2.fill(rect);
 		*/
+	}
+	
+	public void setAvatarColor(int r, int g, int b) {
+		color = new Color(r,g,b);
+		repaint();
 	}
 }
